@@ -1,5 +1,5 @@
 # Devina Kachorin et Julieta María Fonseca Nava
-# 9 janvier 2024
+# 26 janvier 2024
 # TP4 - Arcade
 
 import arcade
@@ -37,19 +37,19 @@ class MyGame(arcade.Window):
     # Une fonction qui gère les événements qui se déroule lors d'un clic d'une souris
     def on_mouse_press(self, x: int, y: int, button: int, modifiers: int):
         if button == arcade.MOUSE_BUTTON_LEFT:
-            ball = balle(random.randint(50, 750), random.randint(50, 550), 3, 3)
+            ball = balle(x, y, 3, 3)
             self.balle.append(ball)
 
         if button == arcade.MOUSE_BUTTON_RIGHT:
-            rect = rectangle(random.randint(100, 750), random.randint(100, 550), 5, 5, 100, 50)
+            rect = rectangle(x, y, 5, 5, 100, 50)
             self.rectangle.append(rect)
 
 
 # La classe de la balle
 class balle():
     def __init__(self, posx, posy, change_x, change_y):
-        self.posy = posx
-        self.posx = posy
+        self.posx = posx
+        self.posy = posy
         self.change_x = change_x
         self.change_y = change_y
         self.rayon = random.randint(10, 30)
